@@ -3,7 +3,7 @@ Ações: Cadastrar um novo usuário, fazer login e editar a senha.
 
 <img src="https://imgur.com/XmLSyix.png" width="500">
 
-## Ferramentas Utilizadas
+## :hammer: Ferramentas Utilizadas
 
 * Visual Studio Code
 * Xampp (MariaDB + Apache)
