@@ -42,7 +42,7 @@ CREATE TABLE tb_users(
 
 * Caso queira mudar a tabela do banco de dados, deverá fazer ajustes no arquivo Connection.php e no user.Service.php
 
-* O método de edição da senha não é uma forma segura de se fazer, foi implementado apenas para testes, pretendo mudar depois.
+* O método de update da senha não é uma forma segura de se fazer, foi implementado apenas para testes, pretendo mudar depois.
 
 * Não implementei as APIs para o cadastro com as redes sociais ainda.
 
