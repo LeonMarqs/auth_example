@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background:url('./website-login-background.jpg') no-repeat;
+  overflow: auto;
+}
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.content {
+  background-color: #ffffff;
+
+  padding: 35px 20px;
+  width: 360px;
+  height: 640px;
+
+  border-radius: 15px;
+}
+
+.borda {
+  border: 1px solid red;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+.login {
+  text-align: center;
+  font-size: 2.3em;
+  font-weight: 900;
+  margin: 20px 0px;
+}
+
+.update {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin: 20px 0px;
+}
+
+.form {
+  margin-bottom: 25px;
+}
+
+input {
+  margin-top: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input {
+  border: none;
+  margin-left: 10px;
+  margin-bottom: 6px;
+
+  width: 90%;
+}
+
+.line {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #ccc;
+
+  height: 2px;
+}
+
+.line-active {
+  transition: all 0.5s;
+  background-color: rgb(100, 100, 100);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+a {
+  color: #9b186f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #212940;
+}
+
+a.forgot {
+  margin-top: 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+button:focus {
+  outline:none;
+}
+
+.button {
+  color: #ffffff;
+  font-weight: 600;
+
+  border: none;
+  background-image: linear-gradient(to bottom right, #212940, #9b186f);
+  padding: 10px;
+  width: 85%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+
+i {
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+
+  .content {
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 800px;
+
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+}
+
+ }
