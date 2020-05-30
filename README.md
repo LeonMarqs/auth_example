@@ -20,7 +20,7 @@ Ações: Cadastrar um novo usuário, fazer login e editar a senha.
 CREATE DATABASE auth;
 
 CREATE TABLE tb_users(
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(255) NOT NULL,
   passw VARCHAR(32) NOT NULL
 )
