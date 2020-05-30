@@ -33,7 +33,7 @@ CREATE TABLE tb_users(
 ```
 
 3. #### Fazer o clone do repositório na pasta htdocs do xampp
-```$ C:\xampp\htdocs\ git clone https://github.com/LeonMarqs/auth_example.git```
+C:\xampp\htdocs\ ```$ git clone https://github.com/LeonMarqs/auth_example.git```
 
 4. #### Abrir a página index no navegador
 <img src="https://imgur.com/7Cay2rU.png" width="350">
