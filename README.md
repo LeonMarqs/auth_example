@@ -1,4 +1,4 @@
-<h3 align="center">Autenticador de login</h3
+<h3 align="center">Autenticador de login</h3>
   <br>
   <p align="center">
     Um autenticador de login feito com PHP. <br>
