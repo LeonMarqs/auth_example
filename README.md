@@ -1,9 +1,7 @@
 Um autenticador de login feito com PHP.
 Ações: Cadastrar um novo usuário, fazer login e editar a senha.
 
-<img src="https://imgur.com/XmLSyix.png" width="220">
-<img src="https://imgur.com/855O6kJ.png" width="150">
-<img src="https://imgur.com/OJWvylN.png" width="140">
+<img src="https://imgur.com/XmLSyix.png" width="500">
 
 ## Ferramentas Utilizadas
 
@@ -23,8 +21,8 @@ CREATE DATABASE auth;
 
 CREATE TABLE tb_users(
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    passw VARCHAR(32) NOT NULL
+  username VARCHAR(255) NOT NULL,
+  passw VARCHAR(32) NOT NULL
 )
 ```
 
