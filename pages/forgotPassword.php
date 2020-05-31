@@ -36,11 +36,11 @@
 
       <form action="../login.controller.php" method="POST">
 
-        <h6>Username</h6>
+        <h6>E-mail</h6>
         <div class="form">
           <i class="fas fa-user"></i>
-          <input type="text" name="user" id="username" placeholder="Type your username" class="input">
-          <span id="username-line" class="line"></span>
+          <input type="email" name="email" id="email" placeholder="Type your email" class="input">
+          <span id="email-line" class="line"></span>
         </div>
 
         <h6>New password</h6>

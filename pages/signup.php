@@ -43,6 +43,13 @@
           <span id="username-line" class="line"></span>
         </div>
 
+        <h6>E-mail</h6>
+        <div class="form">
+          <i class="fas fa-envelope"></i>
+          <input type="text" name="email" id="email" placeholder="Type your email" class="input">
+          <span id="email-line" class="line"></span>
+        </div>
+
         <h6>Password</h6>
         <div class="form">
           <i class="fas fa-lock"></i>
@@ -50,20 +57,7 @@
           <span id="password-line" class="line"></span>
         </div>
 
-        <h6>Confirm your password</h6>
-        <div class="form">
-          <i class="fas fa-lock"></i>
-          <input id="password2" type="password" placeholder="Confirm your password" class="input" name="passwordConfirm">
-          <span id="password-line2" class="line"></span>
-        </div>
-
         <button class="button" type="submit">SIGN UP</button>
-
-        <?php if(isset($_GET['signup']) && $_GET['signup'] == 'passwordError') { ?>
-          <div class="text-danger text-center mt-2">
-            passwords do not match, check again
-          </div>
-        <?php } ?>
 
         <?php if(isset($_GET['signup']) && $_GET['signup'] == 'failed') { ?>
           <div class="text-danger text-center mt-2">
@@ -74,6 +68,12 @@
         <?php if(isset($_GET['signup']) && $_GET['signup'] == 'invalidInput') { ?>
           <div class="text-danger text-center mt-2">
             One or more required fields have not been filled in.
+          </div>
+        <?php } ?>
+
+        <?php if(isset($_GET['signup']) && $_GET['signup'] == 'invalidEmail') { ?>
+          <div class="text-danger text-center mt-2">
+            Invalid email.
           </div>
         <?php } ?>
 

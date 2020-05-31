@@ -28,7 +28,8 @@ CREATE DATABASE auth;
 CREATE TABLE tb_users(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(255) NOT NULL,
-  passw VARCHAR(32) NOT NULL
+  passw VARCHAR(32) NOT NULL,
+  email VARCHAR(255) NOT NULL
 )
 ```
 
@@ -42,7 +43,7 @@ C:\xampp\htdocs\ ```$ git clone https://github.com/LeonMarqs/auth_example.git```
 
 * Caso queira mudar a tabela do banco de dados, deverá fazer ajustes no arquivo Connection.php e no user.Service.php
 
-* O método de update da senha não é uma forma segura de se fazer, foi implementado apenas para testes, pretendo mudar depois.
+* O método de update da senha não é uma forma muito segura de se fazer, foi implementado apenas para testes, pretendo mudar depois.
 
 * Não implementei as APIs para o cadastro com as redes sociais ainda.
 

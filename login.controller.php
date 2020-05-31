@@ -2,9 +2,7 @@
 
   session_start();
 
-  // echo '<pre>';
-  // print_r($_POST);
-  // echo '</pre>';
+  
   
   require_once "Connection.php";
   require_once "User.model.php";
@@ -17,15 +15,18 @@
   // verificar login
   $users = $userService->recuperar();
   $continue = true;
+  echo '<pre>';
+  print_r($users);
+  echo '</pre>';
   
   if(isset($_SESSION['action']) && $_SESSION['action'] == 'login') {
       
     foreach ($users as $key => $user) {
   
-      if($_POST['user'] == $user[0] && md5($_POST['password']) == $user[1]) {
+      if($_POST['user'] == $user['username'] && md5($_POST['password']) == $user['passw']) {
         $_SESSION['user'] = $_POST['user'];
         header('Location: pages/index2.php');
-        $id = $user[2];
+        $id = $user['id'];
         $continue = false;
       } 
     } 
@@ -38,31 +39,37 @@
 
   // cadastrar novo usuário
   if(isset($_SESSION['action']) && $_SESSION['action'] == 'signup') {
+
     //valores menores que o determinado
     if(strlen($_POST['user']) < 5 || strlen($_POST['password']) < 8) {
       header('Location: pages/signup.php?signup=minLength');
       $continue = false;
     }
 
-    // senhas nao conferem
-    if($_POST['password'] != $_POST['passwordConfirm']) {
-      header('Location: pages/signup.php?signup=passwordError');
+    //valores vazios
+    if($_POST['user'] == '' || $_POST['password'] == '' || $_POST['email'] == '') {
+      header('Location: pages/signup.php?signup=invalidInput');
       $continue = false;
     }
 
-    //valores vazios
-    if($_POST['user'] == '' || $_POST['password'] == '' || $_POST['passwordConfirm'] == '') {
-      header('Location: pages/signup.php?signup=invalidInput');
+    //email invalido
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+      header('Location: pages/signup.php?signup=invalidEmail');
       $continue = false;
     }
 
     //usuário já existe
     foreach ($users as $key => $user) {
   
-      if($_POST['user'] == $user[0]) {
+      if($_POST['user'] == $user['username'] ) {
         header('Location: pages/signup.php?signup=failed');
       $continue = false;
       } 
+
+      if($_POST['email'] == $user['email'] ) {
+        header('Location: pages/signup.php?signup=failed');
+      $continue = false;
+      }
     }
 
     if($continue) {
@@ -75,12 +82,12 @@
   // atualizar senha
   if(isset($_SESSION['action']) && $_SESSION['action'] == 'updatePassword') {
 
-    //valores menores que o determinado
-    if(strlen($_POST['user']) < 5 || strlen($_POST['password']) < 8) {
+    //senha menor que o determinado
+    if(strlen($_POST['password']) < 8) {
       header('Location: pages/forgotPassword.php?signup=minLength');
       $continue = false;
     }
-    
+
     // senhas nao conferem
     if($_POST['password'] != $_POST['passwordConfirm']) {
       header('Location: pages/forgotPassword.php?signup=passwordError');
@@ -88,7 +95,7 @@
     }
   
     //usuario não existe
-    $user = $userService->recuperarPorUser();
+    $user = $userService->recuperarPorEmail();
     if(count($user) != 1) {
       header('Location: pages/forgotPassword.php?signup=unregistered');
     $continue = false;

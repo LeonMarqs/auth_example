@@ -7,6 +7,13 @@ $(document).ready(() => {
     $('#username-line').removeClass('line-active');
   })
 
+  $('#email').on('focus', () => {
+    $('#email-line').addClass('line-active');
+  })
+  $('#email').on('blur', () => {
+    $('#email-line').removeClass('line-active');
+  })
+
   $('#password').on('focus', () => {
     $('#password-line').addClass('line-active');
   })
@@ -22,6 +29,5 @@ $(document).ready(() => {
     $('#password-line2').removeClass('line-active');
   })
 
-  
 
 });
