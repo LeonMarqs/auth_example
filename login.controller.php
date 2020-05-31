@@ -23,6 +23,7 @@
     foreach ($users as $key => $user) {
   
       if($_POST['user'] == $user[0] && md5($_POST['password']) == $user[1]) {
+        $_SESSION['user'] = $_POST['user'];
         header('Location: pages/index2.php');
         $id = $user[2];
         $continue = false;
@@ -98,5 +99,15 @@
       header('Location: pages/forgotPassword.php?signup=success');
     }
 
-  } 
+  }
+  
+  //sair 
+  if(isset($_SESSION['action']) && $_SESSION['action'] == 'sair') {
+
+    session_start();
+    session_destroy();
+    header('Location: pages/index.php');
+
+  }
+
 ?>

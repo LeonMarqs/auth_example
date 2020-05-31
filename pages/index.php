@@ -61,6 +61,12 @@
           </div>
         <?php } ?>
 
+        <?php if(isset($_GET['login']) && $_GET['login'] == 'not') { ?>
+          <div class="text-danger text-center mt-2">
+            Do login before using.
+          </div>
+        <?php } ?>
+
       </form>
 
       <div class="text-center mt-4">Or sign in using</div>
