@@ -36,10 +36,10 @@
 
       <form action="../login.controller.php" method="POST">
 
-        <h6>Username</h6>
+        <h6>Nickname</h6>
         <div class="form">
           <i class="fas fa-user"></i>
-          <input type="text" name="user" id="username" placeholder="Type your username" class="input">
+          <input type="text" name="user" id="username" placeholder="Type your nickname" class="input">
           <span id="username-line" class="line"></span>
         </div>
 
